@@ -13,7 +13,7 @@ def get_video_sources(url):
     chrome_options.add_argument("--disable-gpu")
 
     # Path to your ChromeDriver
-    chrome_service = Service("/path/to/chromedriver")
+    chrome_service = Service("/usr/local/python/3.12.1/lib/python3.12/chromedriver")
     driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
     # Load the webpage
