@@ -20,7 +20,7 @@ def get_video_sources(url):
     driver.get(url)
     
     # Wait for the page to load completely and for JavaScript to render the content
-    time.sleep(5)  # Adjust this as needed
+    time.sleep(30)  # Adjust this as needed
 
     # Parse the page source with BeautifulSoup
     soup = BeautifulSoup(driver.page_source, 'html.parser')
