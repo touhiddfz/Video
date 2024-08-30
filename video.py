@@ -28,7 +28,8 @@ def crawl_sitemap(sitemap_url, output_file):
     try:
         response = requests.get(sitemap_url)
         response.raise_for_status()
-        soup = BeautifulSoup(response.content, 'xml')
+        # Use 'xml.parser' to avoid the error
+        soup = BeautifulSoup(response.content, 'xml.parser')
 
         urls = soup.find_all('loc')
         
@@ -51,8 +52,8 @@ def crawl_sitemap(sitemap_url, output_file):
 sitemap_url = input("Enter the XML Sitemap URL: ")
 
 # Set the output file path
-output_file = '/storage/emulated/0/Download/anime.txt'
+output_file = '/storage/emulated/0/FileExplorer/anime.txt'
 
 # Crawl the sitemap and save the results
 crawl_sitemap(sitemap_url, output_file)
-    
+            
